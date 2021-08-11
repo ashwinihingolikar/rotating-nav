@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    background-color: #352617;
+    overflow-x: hidden;
+    margin: 0;
+    
+}
+
+.main-container{
+    background-image: url(explore.jpg);
+    background-size: cover;
+    background-position-x: center;
+    height: 100vh;
+    transform-origin: top left;
+    padding: 50px;
+    
+}
+
+.show-nav{
+    transform: rotate(-20deg);
+}
+
+.circle-container{
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle{
+    background-color: #352617;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.show-nav .circle{
+    transform: rotate(-70deg);
+}
+.circle button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: #fff;
+}
+
+  .circle button:focus{
+      outline: none;
+  }
+
+  .circle button#open{
+      left: 60%;
+  }
+  .circle button#close{
+    top: 119px;
+    left:105px;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.main-container.show-nav + nav li{
+    transform:translateX(0);
+    transition-delay: 0.3;
+}
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+  }
+  
+
+
+@media screen and (max-width: 800px) {
+   .main-container{
+       background-image: url(explore-mob.jpg);
+       background-size: cover;
+       background-position: center;
+   }
+    
+}
